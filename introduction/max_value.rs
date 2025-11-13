@@ -2,13 +2,12 @@ use std::i32::MIN;
 
 fn max_value(nums: Vec<i32>) -> i32 {
     let mut max = MIN;
-    for x in nums.iter() {
-        if <i32 as Into<i32>>::into(*x) > max {
-            max = (*x).into();
+    for x in nums {
+        if x > max {
+            max = x;
         }
     }
-
-    return max;
+    max
 }
 
 #[test]
