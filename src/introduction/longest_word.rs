@@ -1,4 +1,4 @@
-fn longest_word(sentence: &str) -> String {
+pub fn longest_word(sentence: &str) -> String {
     let words = sentence.split(" ");
     let mut longest = String::new();
 

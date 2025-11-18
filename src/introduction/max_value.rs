@@ -1,6 +1,6 @@
 use std::i32::MIN;
 
-fn max_value(nums: Vec<i32>) -> i32 {
+pub fn max_value(nums: Vec<i32>) -> i32 {
     let mut max = MIN;
     for x in nums {
         if x > max {

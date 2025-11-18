@@ -1,10 +1,10 @@
 #[derive(Debug, PartialEq)]
-enum Item {
+pub enum Item {
     N(usize),
     S(String),
 }
 
-fn fizz_buzz(n: usize) -> Vec<Item> {
+pub fn fizz_buzz(n: usize) -> Vec<Item> {
     let mut results: Vec<Item> = vec![];
 
     for i in 1..=n {
