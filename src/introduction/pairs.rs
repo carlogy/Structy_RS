@@ -1,17 +1,12 @@
 pub fn pairs(pair_list: Vec<String>) -> Vec<(String, String)> {
-    let mut p: Vec<(String, String)> = Vec::new();
-
-    let len = pair_list.len();
-    for i in 0..len {
-        println!("{} ", pair_list[i]);
-        for j in i + 1..len {
-            println!("{}", pair_list[j]);
-            println!("{:?}", (pair_list[i].clone(), pair_list[j].clone()));
-
-            p.push((pair_list[i].clone(), pair_list[j].clone()));
+    let capacity = { pair_list.len() * (pair_list.len() - 1) / 2 };
+    let mut result: Vec<(String, String)> = Vec::with_capacity(capacity);
+    for (i, a) in pair_list.iter().enumerate() {
+        for b in pair_list.iter().skip(i + 1) {
+            result.push((a.to_string(), b.to_string()));
         }
     }
-    p
+    result
 }
 
 #[test]
